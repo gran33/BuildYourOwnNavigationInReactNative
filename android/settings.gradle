@@ -1,0 +1,3 @@
+rootProject.name = 'BuildYourOwnNavigationInReactNative'
+
+include ':app'
