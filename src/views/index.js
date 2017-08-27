@@ -5,7 +5,6 @@ import WelcomeView from './WelcomeView';
 
 export {
   WelcomeView,
-
   AnimalsView,
   EmojisView,
   ObjectsView

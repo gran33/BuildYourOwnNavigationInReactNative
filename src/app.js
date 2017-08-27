@@ -52,8 +52,6 @@ export default class BuildYourOwnNavigationInReactNative extends Component {
         return null;
     }
 
-    console.log('RANG', '_renderInternalView', 'pushScreen', pushScreen);
-    console.log('RANG', '_renderInternalView', 'presentedView', this.state.presentedView);
 
     return (
       <PresentedView
@@ -75,9 +73,7 @@ export default class BuildYourOwnNavigationInReactNative extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flex: 1,justifyContent: 'center',alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
