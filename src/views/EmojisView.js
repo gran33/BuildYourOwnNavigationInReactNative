@@ -5,13 +5,13 @@ import {
   View,
   Button
 } from 'react-native';
+import BaseView from './BaseView';
 
 
 export default class EmojisView extends Component {
 
   _onPress = () => {
-console.log('RANG', '_onPress', this.props);
-this.props.changeView(this.props.pushScreen);
+    this.props.changeView(this.props.pushScreen);
   };
 
 

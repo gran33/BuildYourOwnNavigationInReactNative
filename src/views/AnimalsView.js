@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 
 export default class AnimalsView extends Component {
 
 
+  _onPress = () => {
+    this.props.changeView(this.props.pushScreen);
+  };
 
   render() {
     return (
@@ -15,6 +19,9 @@ export default class AnimalsView extends Component {
         <Text style={styles.welcome}>
           🐶🐱🐭🐹🐼🐻🦊🐰🐨🐯🦁🐮🐵
         </Text>
+        <Button title={'Push'}
+                onPress={this._onPress}
+        />
       </View>
     );
   }
