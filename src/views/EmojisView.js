@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button
-} from 'react-native';
-import BaseView from './BaseView';
+import {StyleSheet, Text, View, Button} from 'react-native';
+import * as Views from './index';
 
 
 export default class EmojisView extends Component {
 
   _onPress = () => {
-    this.props.changeView(this.props.pushScreen);
+    this.props.changeView(Views.AnimalsView);
   };
 
 

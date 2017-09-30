@@ -46,13 +46,11 @@ export default class BuildYourOwnNavigationInReactNative extends Component {
 
       case Views.AnimalsView:
         PresentedView = Views.AnimalsView;
-        pushScreen = Views.ObjectsView;
         backScreen = Views.EmojisView;
         break;
 
       case Views.EmojisView:
         PresentedView = Views.EmojisView;
-        pushScreen = Views.AnimalsView;
         backScreen = Views.WelcomeView;
         break;
 
@@ -63,7 +61,6 @@ export default class BuildYourOwnNavigationInReactNative extends Component {
 
       case Views.WelcomeView:
         PresentedView = Views.WelcomeView;
-        pushScreen = Views.EmojisView;
         break;
 
       default:
@@ -78,7 +75,6 @@ export default class BuildYourOwnNavigationInReactNative extends Component {
         {this._renderBackButton(backScreen)}
         <PresentedView
           changeView={this._handleChangeView}
-          pushScreen={pushScreen}
           opacityValue={opacityValue}
           animationStyle={{opacity: opacityValue}}
         />

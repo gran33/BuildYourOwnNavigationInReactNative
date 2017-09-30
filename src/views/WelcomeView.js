@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Button,
-  View
-} from 'react-native';
+import {StyleSheet, Button, View} from 'react-native';
 
+import * as Views from './index';
 
 export default class WelcomeView extends Component {
 
   _onPress = () => {
-    this.props.changeView(this.props.pushScreen);
+    this.props.changeView(Views.EmojisView);
   };
 
   render() {
