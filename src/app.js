@@ -4,7 +4,8 @@ import {
   StyleSheet,
   Button,
   View,
-  Animated
+  LayoutAnimation,
+
 } from 'react-native';
 
 import * as Views from './views';
@@ -17,12 +18,15 @@ export default class BuildYourOwnNavigationInReactNative extends Component {
     super(props);
     this.state = {
       presentedView: Views.WelcomeView,
-      passProps: undefined
+      passProps: undefined,
+      animateOpacityValue: 1,
+      animateLeft: 0
     }
   }
 
-  _changeView = (presentedView, passProps) => {
-    this.setState({presentedView, passProps});
+   _changeView = (presentedView, passProps) => {
+    LayoutAnimation.easeInEaseOut();
+    this.setState({presentedView, passProps, animateLeft: 0});
   };
 
   _renderBackButton(backScreen) {
@@ -67,16 +71,13 @@ export default class BuildYourOwnNavigationInReactNative extends Component {
         return null;
     }
 
-    const opacityValue = new Animated.Value(0);
 
     return (
-      <View style={{flex: 1, flexDirection: 'column', marginTop: 20}}>
+      <View style={{flex: 1, flexDirection: 'column', marginTop: 20, opacity: this.state.animateOpacityValue, marginLeft: this.state.animateLeft}}>
         {this._renderBackButton(backScreen)}
         <PresentedView
           changeView={this._changeView}
-          opacityValue={opacityValue}
-          animationStyle={{opacity: opacityValue}}
-          passProps={this.state.passProps}
+          {...this.state.passProps}
         />
       </View>
     )
