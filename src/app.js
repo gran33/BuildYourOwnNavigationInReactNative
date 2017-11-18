@@ -16,12 +16,13 @@ export default class BuildYourOwnNavigationInReactNative extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      presentedView: Views.WelcomeView
+      presentedView: Views.WelcomeView,
+      passProps: undefined
     }
   }
 
-  _handleChangeView = (presentedView) => {
-    this.setState({presentedView});
+  _changeView = (presentedView, passProps) => {
+    this.setState({presentedView, passProps});
   };
 
   _renderBackButton(backScreen) {
@@ -39,7 +40,6 @@ export default class BuildYourOwnNavigationInReactNative extends Component {
 
   _renderInternalView() {
     let PresentedView = this.state.presentedView;
-    let pushScreen = '';
     let backScreen;
 
     switch(PresentedView) {
@@ -69,14 +69,14 @@ export default class BuildYourOwnNavigationInReactNative extends Component {
 
     const opacityValue = new Animated.Value(0);
 
-
     return (
       <View style={{flex: 1, flexDirection: 'column', marginTop: 20}}>
         {this._renderBackButton(backScreen)}
         <PresentedView
-          changeView={this._handleChangeView}
+          changeView={this._changeView}
           opacityValue={opacityValue}
           animationStyle={{opacity: opacityValue}}
+          passProps={this.state.passProps}
         />
       </View>
     )

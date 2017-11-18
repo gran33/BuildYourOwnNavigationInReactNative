@@ -1,3 +1,4 @@
+import get from 'lodash/get';
 import React, { Component } from 'react';
 import {StyleSheet, Text, View, Button} from 'react-native';
 import * as Views from './index';
@@ -10,8 +11,15 @@ export default class AnimalsView extends Component {
   };
 
   render() {
+    const shouldShowMessage = !!get(this.props, 'message');
+
     return (
       <View style={styles.container}>
+        <Text>Animals</Text>
+        {shouldShowMessage &&
+        <Text style={styles.welcome}>
+          {this.props.message}
+        </Text>}
         <Text style={styles.welcome}>
           🐶🐱🐭🐹🐼🐻🦊🐰🐨🐯🦁🐮🐵
         </Text>

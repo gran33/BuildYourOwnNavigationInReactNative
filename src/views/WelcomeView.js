@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {StyleSheet, Button, View} from 'react-native';
+import {StyleSheet, Button, View, Text} from 'react-native';
 
 import * as Views from './index';
 
@@ -12,6 +12,8 @@ export default class WelcomeView extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <Text>Welcome</Text>
+
         <Button
           title={'Push'}
           onPress={this._onPress}

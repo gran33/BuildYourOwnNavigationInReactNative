@@ -6,13 +6,14 @@ import * as Views from './index';
 export default class EmojisView extends Component {
 
   _onPress = () => {
-    this.props.changeView(Views.AnimalsView);
+    this.props.changeView(Views.AnimalsView, {message: 'Hi from emojis'});
   };
 
 
   render() {
     return (
       <View style={styles.container}>
+        <Text>Emojis</Text>
         <Text style={styles.welcome}>
           😀😃😅😇😍😘😜🤑🤠😱👻😼
         </Text>
