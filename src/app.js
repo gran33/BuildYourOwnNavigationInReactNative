@@ -35,7 +35,7 @@ export default class BuildYourOwnNavigationInReactNative extends Component {
       <View style={styles.backButtonContainer}>
         <Button
           title={'< Pop'}
-          onPress={() => this.setState({presentedView: backScreen})}
+          onPress={() => this._changeView(backScreen)}
           style={styles.backButton}
         />
       </View>
