@@ -4,8 +4,7 @@ import {
   StyleSheet,
   Button,
   View,
-  LayoutAnimation,
-
+  LayoutAnimation
 } from 'react-native';
 
 import * as Views from './views';
@@ -20,13 +19,12 @@ export default class BuildYourOwnNavigationInReactNative extends Component {
       presentedView: Views.WelcomeView,
       passProps: undefined,
       animateOpacityValue: 1,
-      animateLeft: 0
     }
   }
 
    _changeView = (presentedView, passProps) => {
     LayoutAnimation.easeInEaseOut();
-    this.setState({presentedView, passProps, animateLeft: 0});
+    this.setState({presentedView, passProps});
   };
 
   _renderBackButton(backScreen) {
